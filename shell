@@ -1,0 +1,10 @@
+#!/bin/bash
+anu=`date '+%Y%m%d'`
+cd  /home/admin/anu
+if [ ! -d $anu ]; then
+mkdir $anu
+fi
+#find . -mmin +0  -type f -iname "*avi" -exec gzip -f '{}' ';'
+cd $anu
+ffmpeg -i /dev/video0 -video_size 1920x1080 -framerate 25   output.mp4
+
